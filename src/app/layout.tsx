@@ -1,6 +1,23 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import { Alegreya, Belleza } from 'next/font/google'; // <-- Importa las fuentes aquí
+
+// Define las fuentes usando next/font/google
+const alegreya = Alegreya({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-alegreya', // Define una variable CSS para Alegreya
+  weight: ['400', '500', '700', '400'], // Especifica los pesos que necesitas
+  style: ['normal', 'italic'] // Especifica los estilos (normal, italic)
+});
+
+const belleza = Belleza({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-belleza', // Define una variable CSS para Belleza
+  weight: '400', // Belleza suele tener solo un peso
+});
 
 export const metadata: Metadata = {
   title: 'Storytime Landing | Cuentos Infantiles Mágicos',
@@ -14,13 +31,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;1,400&family=Belleza&display=swap" rel="stylesheet" />
-      </head>
-      <body className="font-body antialiased">
+    // Aplica las clases de las variables CSS a la etiqueta <html>
+    <html lang="es" className={`${alegreya.variable} ${belleza.variable}`}> 
+      {/* Elimina las etiquetas <link> de Google Fonts aquí, ya no son necesarias */}
+      <body className="font-body antialiased"> {/* Asegúrate de que font-body use --font-alegreya o --font-belleza */}
         {children}
         <Toaster />
       </body>
