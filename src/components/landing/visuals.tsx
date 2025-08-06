@@ -15,16 +15,17 @@ export function Visuals() {
         </div>
 
         <div className="relative mb-12 aspect-video w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl group cursor-pointer">
-            <Image
-                src="https://placehold.co/1280x720.png"
-                alt="Video promocional de la aplicación"
-                layout="fill"
-                objectFit="cover"
-                data-ai-hint="storybook app promo"
-            />
-            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                <PlayCircle className="w-20 h-20 text-white/80 transform group-hover:scale-110 transition-transform duration-300" />
-            </div>
+          <Image
+            src="https://placehold.co/1280x720.png"
+            alt="Video promocional de la aplicación"
+            layout="fill"
+            objectFit="cover"
+            data-ai-hint="storybook app promo"
+            unoptimized // <-- Línea añadida
+          />
+          <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+            <PlayCircle className="w-20 h-20 text-white/80 transform group-hover:scale-110 transition-transform duration-300" />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -35,6 +36,7 @@ export function Visuals() {
               layout="fill"
               objectFit="cover"
               data-ai-hint="storybook app screenshot"
+              unoptimized // <-- Línea añadida
             />
           </div>
           <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
@@ -44,6 +46,7 @@ export function Visuals() {
               layout="fill"
               objectFit="cover"
               data-ai-hint="reading app interface"
+              unoptimized // <-- Línea añadida
             />
           </div>
           <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
@@ -53,6 +56,7 @@ export function Visuals() {
               layout="fill"
               objectFit="cover"
               data-ai-hint="kids learning game"
+              unoptimized // <-- Línea añadida
             />
           </div>
           <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
@@ -62,6 +66,7 @@ export function Visuals() {
               layout="fill"
               objectFit="cover"
               data-ai-hint="children app profile"
+              unoptimized // <-- Línea añadida
             />
           </div>
         </div>
