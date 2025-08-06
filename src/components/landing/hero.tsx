@@ -23,6 +23,7 @@ export function Hero() {
               priority
               className="object-contain rounded-2xl"
               data-ai-hint="children reading magical book"
+              unoptimized // <-- ¡Añade esta línea aquí!
             />
           </div>
         </div>
