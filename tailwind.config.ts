@@ -1,4 +1,5 @@
-import type {Config} from 'tailwindcss';
+import type { Config } from 'tailwindcss';
+import { fontFamily } from 'tailwindcss/defaultTheme'; // <-- Importa fontFamily aquí
 
 export default {
   darkMode: ['class'],
@@ -17,16 +18,17 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Alegreya', 'serif'],
-        headline: ['Belleza', 'sans-serif'],
-        code: ['monospace'],
+        // <-- Modificado para usar variables CSS
+        body: ['var(--font-alegreya)', ...fontFamily.serif], // Usa la variable de Alegreya
+        headline: ['var(--font-belleza)', ...fontFamily.sans], // Usa la variable de Belleza
+        code: ['monospace'], // Este se mantiene igual si no usas una fuente variable
       },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
           DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
+          foreground: 'hsl(var(--card-foreground)',
         },
         popover: {
           DEFAULT: 'hsl(var(--popover))',
